@@ -1,3 +1,6 @@
+//app url
+// https://powerful-tundra-60590.herokuapp.com/
+
 const express = require('express');
 const fs = require('fs');
  var app = express();
@@ -44,6 +47,13 @@ app.get('/about',(req,res) => {
    //res.send('about page');
    res.render('about.hbs',{
       pageTitle:'About page',
+   });
+});
+
+app.get('/projects',(req,res) => {
+   //res.send('about page');
+   res.render('projects.hbs',{
+      pageTitle:'Projects page',
    });
 });
 
