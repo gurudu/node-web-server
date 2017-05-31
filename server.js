@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
  var app = express();
  const hbs = require('hbs');
+ const port = process.env.PORT || 3000;
  hbs.registerPartials(__dirname + '/views/partials');
  //can inject data dynamically inside our templates
  //to render templates(dynamic html pages) using handlebars npm package
@@ -49,4 +50,6 @@ app.get('/about',(req,res) => {
 app.get('/bad',(req,res) => {
    res.send({errorMessage:'unable to handle requests'});
 });
-app.listen(3000);
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
+});
